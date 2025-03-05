@@ -45,9 +45,9 @@ jobs:
         shell: bash
         run: |
           if [[ "${{ matrix.version }}" == "${{ env.LATEST_VERSION }}" ]]; then
-            TAGS="ghcr.io/BluetonicBeats/docker-google-fonts-proxy:latest,ghcr.io/BluetonicBeats/docker-google-fonts-proxy:${{ matrix.version }}"
+            TAGS="ghcr.io/bluetonicbeats/docker-google-fonts-proxy:latest,ghcr.io/bluetonicbeats/docker-google-fonts-proxy:${{ matrix.version }}"
           else
-            TAGS="ghcr.io/BluetonicBeats/docker-google-fonts-proxy:${{ matrix.version }}"
+            TAGS="ghcr.io/bluetonicbeats/docker-google-fonts-proxy:${{ matrix.version }}"
           fi
           echo "VERSION_TAG=${{ matrix.version }}" >> $GITHUB_ENV
           echo "TAGS=$TAGS" >> $GITHUB_ENV
