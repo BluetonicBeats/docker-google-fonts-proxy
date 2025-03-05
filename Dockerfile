@@ -1,6 +1,6 @@
 FROM nginx:1.21-alpine
 
-ENV FONTS_HOST 'http://localhost'
+ENV FONTS_HOST='http://localhost'
 
 RUN apk add --no-cache \
     bash
