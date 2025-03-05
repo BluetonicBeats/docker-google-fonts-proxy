@@ -12,7 +12,7 @@ production ready.
 
 ## Usage
 
-Once setup (for instance at Citipo we run an instance on https://fonts.citipo.com), all requests done to 
+Once setup (for instance at BluetonicBeats we run an instance on https://fonts.bluetonicbeats.com), all requests done to 
 the configured URL will be forwarded to Google Fonts with the same exact URL path and CSS responses
 will be altered on-the-fly to change fonts files reference to use your own domain. 
 
@@ -24,7 +24,7 @@ Once deployed, you can use the service by directly replacing the Google Fonts UR
 ```html
 <link href="https://fonts.googleapis.com/css2?family=Assistant:ital,wght@0,400;0,700;0,800;1,400;1,700" rel="stylesheet" crossorigin="anonymous" />
 <!-- becomes -->
-<link href="https://fonts.citipo.com/css2?family=Assistant:ital,wght@0,400;0,700;0,800;1,400;1,700" rel="stylesheet" crossorigin="anonymous" />
+<link href="https://fonts.bluetonicbeats.com/css2?family=Assistant:ital,wght@0,400;0,700;0,800;1,400;1,700" rel="stylesheet" crossorigin="anonymous" />
 ```
 
 > In compliance to Google Fonts Terms of Service, this proxy doesn't cache the fonts locally, it only transfers
@@ -39,7 +39,7 @@ version: '3'
 
 services:
     fonts:
-        image: docker.pkg.github.com/citipo/docker-google-fonts-proxy/alpine
+        image: ghcr.io/bluetonicbeats/docker-google-fonts-proxy/alpine
         ports:
             # You can use a proxy (like https://github.com/nginx-proxy/nginx-proxy) 
             # to provide SSL
@@ -47,7 +47,7 @@ services:
         environment:
             # The host you use for fonts: references to Google Fonts 
             # will be replaced to this host in CSS files
-            - FONTS_HOST=fonts.citipo.com
+            - FONTS_HOST=fonts.bluetonicbeats.com
 ```
 
 With Docker CLI:
@@ -55,8 +55,8 @@ With Docker CLI:
 ```bash
 docker run -d \ 
     -p 80:80 \
-    -e FONTS_HOST=fonts.citipo.com \
-    docker.pkg.github.com/citipo/docker-google-fonts-proxy/alpine
+    -e FONTS_HOST=fonts.bluetonicbeats.com \
+    ghcr.io/bluetonicbeats/docker-google-fonts-proxy/alpine
 ```
 
 ## For developers: what to tell you Data Protection Officer?
