@@ -31,7 +31,7 @@ This Docker image supports the following CPU architectures:
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| FONTS_HOST | The host you use for fonts: references to Google Fonts will be replaced to this host in CSS files | `fonts.example.com` |
+| FONTS_HOST | The FQDN you intend to use for your proxy. You will need to replace the url in your css files accordingly  | `fonts.example.com` |
 
 
 ## Usage
