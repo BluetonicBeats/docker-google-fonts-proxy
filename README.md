@@ -1,12 +1,3 @@
-## Project Maintenance
-
-This project was originally maintained by another repository. Due to the original repository appearing unmaintained, I have taken over its maintenance.
-The project is set to auto-update once a week for security reasons.
-Contributions from maintainers and pull requests are welcome.
-
-## License
-Since the original repository did not have a license, I have chosen to license this project under the MIT License. If you are the original author and would like to change the license, please contact me.
-
 # A Google Fonts proxy as a Docker image for GDPR compliance
 
 Recently, several GDPR Data Protection Authorities restricted the usage of Google Fonts in websites
@@ -94,3 +85,12 @@ service in your own infrastructure, no personal data is ever transfered to Googl
 
 Data anonymization (which is different from pseudonymization) ensures that the data transfered to Google isn't
 covered by GDPR, thus not being a compliance issue.
+
+## Project Maintenance
+
+This project was originally maintained by another repository. Due to the original repository appearing unmaintained, I have taken over its maintenance.
+The project is set to auto-update once a week for security reasons.
+Contributions from maintainers and pull requests are welcome.
+
+## License
+Since the original repository did not have a license, I have chosen to license this project under the MIT License. If you are the original author and would like to change the license, please contact me.
