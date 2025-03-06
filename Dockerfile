@@ -36,7 +36,11 @@ FROM nginx:alpine
 
 COPY --from=builder /usr/lib/nginx/modules/ngx_http_subs_filter_module.so /usr/lib/nginx/modules/ngx_http_subs_filter_module.so
 
-RUN sed -i '1iload_module /usr/lib/nginx/modules/ngx_http_subs_filter_module.so;\n' /etc/nginx/nginx.conf
+COPY ./conf/nginx.conf.template /etc/nginx/nginx.conf.template
+COPY ./docker-entrypoint.sh /
+RUN chmod a+x /docker-entrypoint.sh
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
 
 EXPOSE 80
 STOPSIGNAL SIGTERM
