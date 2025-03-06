@@ -1,3 +1,12 @@
+/**
+ * This code is part of a project that was originally maintained by another repository.
+ * The original repository seemed unmaintained, so I have taken over its maintenance.
+ * 
+ * The project is set to auto-update once a week for security reasons.
+ * 
+ * Contributions from maintainers and pull requests are welcome.
+ */
+
 # A Google Fonts proxy as a Docker image for GDPR compliance
 
 Recently, several GDPR Data Protection Authorities restricted the usage of Google Fonts in websites
@@ -9,6 +18,21 @@ with GDPR (as no personal data will be transfered to Google Fonts).
 
 This image only relies on nginx and its substitution module: it's extremely fast, privacy friendly and 
 production ready.
+
+## Supported CPU Architectures
+This Docker image supports the following CPU architectures:
+
+| Architecture | Supported |
+|--------------|-----------|
+| amd64        | ✔️         |
+| arm64        | ✔️         |
+
+## Environment Variables
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| FONTS_HOST | The host you use for fonts: references to Google Fonts will be replaced to this host in CSS files | `fonts.example.com` |
+
 
 ## Usage
 
@@ -69,4 +93,4 @@ personal, indirectly identifiable data into fully anonymous requests towards Goo
 service in your own infrastructure, no personal data is ever transfered to Google (or any other intermediate).
 
 Data anonymization (which is different from pseudonymization) ensures that the data transfered to Google isn't
-covered by GDPR, thus not being a compliance issue. 
+covered by GDPR, thus not being a compliance issue.
