@@ -1,11 +1,11 @@
-/**
- * This code is part of a project that was originally maintained by another repository.
- * The original repository seemed unmaintained, so I have taken over its maintenance.
- * 
- * The project is set to auto-update once a week for security reasons.
- * 
- * Contributions from maintainers and pull requests are welcome.
- */
+## Project Maintenance
+
+This project was originally maintained by another repository. Due to the original repository appearing unmaintained, I have taken over its maintenance.
+The project is set to auto-update once a week for security reasons.
+Contributions from maintainers and pull requests are welcome.
+
+## License
+Since the original repository did not have a license, I have chosen to license this project under the MIT License. If you are the original author and would like to change the license, please contact me.
 
 # A Google Fonts proxy as a Docker image for GDPR compliance
 
