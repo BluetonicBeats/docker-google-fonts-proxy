@@ -1,6 +1,6 @@
 # Based on: https://gist.github.com/hermanbanken/96f0ff298c162a522ddbba44cad31081
 
-FROM nginx:1.27-alpine-slim AS builder
+FROM nginx:1.31-alpine-slim AS builder
 
 # For latest build deps, see https://github.com/nginxinc/docker-nginx/blob/master/mainline/alpine/Dockerfile
 RUN apk add --no-cache --virtual .build-deps \
@@ -32,7 +32,7 @@ RUN mkdir -p /usr/src \
     && make \
     && make install
 
-FROM nginx:alpine
+FROM nginx:1.31-alpine
 
 COPY --from=builder /usr/lib/nginx/modules/ngx_http_subs_filter_module.so /usr/lib/nginx/modules/ngx_http_subs_filter_module.so
 
