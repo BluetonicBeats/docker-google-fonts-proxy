@@ -5,10 +5,16 @@ on:
   push:
     branches:
       - "main"
+    # Rebuild whenever image contents change (not only the Dockerfile pin).
     paths:
       - Dockerfile
+      - docker-entrypoint.sh
+      - conf/**
+  # Weekly rebuild so floating nginx:* alpine tags pick up security patches even
+  # when the Dockerfile pin is unchanged. GitHub disables schedules after 60 days
+  # of repo inactivity; Dependabot + this cron keep the cadence alive.
   schedule:
-    - cron: "0 8 * * TUE" # Every Tuesday at 8:00 AM UTC - We update the image weekly for security reasons
+    - cron: "0 8 * * 1" # Every Monday at 08:00 UTC
 jobs:
   build_and_push:
     name: Build and Push Docker Image
